@@ -10,10 +10,19 @@ namespace CardClasses
 
         private int value;
         private int suit;
+ public bool HasMatchingSuit(Card other)
+        {
+            if (this.suit == other.suit)
+                return true;
+            else
+                return false;
+        }
 
         public override string ToString()
         {
             return values[value] + " of " + suits[suit];
         }
+
+       
     }
 }

@@ -16,9 +16,9 @@ namespace CustomerProductClasses
         {
             userMail = email;
             First = firstName;
-            userId = id;
-            last = lastName;
-            phoneNum = phone;
+            UserId = id;
+            Last = lastName;
+            PhoneNum = phone;
         }
 
         private string userMail
@@ -47,11 +47,11 @@ namespace CustomerProductClasses
             }
         }
 
-        private int userId
+        private int UserId
         {
             get
             {
-                return userId;
+                return UserId;
             }
 
             set
@@ -60,7 +60,7 @@ namespace CustomerProductClasses
             }
         }
 
-        private string last
+        private string Last
         {
             get
             {
@@ -69,15 +69,15 @@ namespace CustomerProductClasses
 
             set
             {
-                last = value;
+                lastName = value;
             }
         }
 
-        private string phoneNum
+        private string PhoneNum
         {
             get
             {
-                return phoneNum;
+                return PhoneNum;
             }
 
             set

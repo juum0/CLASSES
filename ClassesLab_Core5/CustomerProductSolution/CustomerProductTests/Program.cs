@@ -7,11 +7,24 @@ namespace CustomerProductTests
     {
         static void Main(string[] args)
         {
-
+            /*
             TestProductConstructors();
             TestProductToString();
             TestProductPropertyGetters();
             TestProductPropertySetters();
+            */
+            TestCustomerConstructors();
+        }
+
+        static void TestCustomerConstructors()
+        {
+            Customer c1 = new Customer("eediot@gmail.com", "gumby", 1, "lastname", "1266789");
+            Customer c2 = new Customer("mbox@gmail.com", "stan", 2, "marsh", "phonenumber");
+
+            Console.WriteLine("Testing both constructors");
+            Console.WriteLine("Default constructor.  Expecting default values. " + c1.ToString());
+            Console.WriteLine("Overloaded constructor.  Expecting mbox@gmail.com, stan, 2, marsh, phonenumber " + c2.ToString());
+            Console.WriteLine();
         }
 
         static void TestProductConstructors()
@@ -61,5 +74,8 @@ namespace CustomerProductTests
             Console.WriteLine("Expecting 2, T000, 200, First product, 20 " + p1);
             Console.WriteLine();
         }
+
+       
+        }
     }
-}
+

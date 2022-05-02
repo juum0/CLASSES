@@ -10,10 +10,7 @@ namespace CustomerProductClasses
         private decimal unitPrice;
         private int quantity;
 
-        public Product() 
-        {
-
-        }
+        public Product() { }
 
         public Product(int productId, string productCode, string desc, decimal price, int qty)
         {
