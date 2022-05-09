@@ -3,18 +3,16 @@ using CardClasses;
 
 namespace CardTests
 {
-    class Program
+    // Club = 1, Spades = 2, Diamond = 3, Hearts = 4
+    public class Program
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello World!");
         }
-    }
 
-    static void TestHasMatching()
-    {
-        Card c1 = new Card(1, 2);
-        Card c2 = new Card(1, 3);
-        Console.WriteLine("matching suit test. Expecting false:" + c1.HasMatchingSuit(c2));
     }
 }
+
+
