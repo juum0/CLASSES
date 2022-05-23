@@ -12,10 +12,22 @@ namespace CustomerProductTests
             TestProductToString();
             TestProductPropertyGetters();
             TestProductPropertySetters();
-            */
             TestCustomerConstructors();
+            */
+            TestProductListConstructor(); 
         }
 
+
+
+        static void TestProductListConstructor()
+        {
+            ProductList list = new ProductList();
+
+            Console.WriteLine("Testing product list default constructor");
+            Console.WriteLine("Count.  Expecting 0. " + list.Count);
+            Console.WriteLine("ToString.  Expect an empty string. " + list.ToString());
+            Console.WriteLine();
+        }
         static void TestCustomerConstructors()
         {
             Customer c1 = new Customer("eediot@gmail.com", "gumby", 1, "lastname", "1266789");

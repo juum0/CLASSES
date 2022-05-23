@@ -5,91 +5,99 @@ namespace CustomerProductClasses
     public class Customer
     {
         //instance variable - all products get these
-        private string email;
-        private string firstName;
-        private int id;
-        private string lastName;
-        private string phone;
+        private string elecMail;
+        private string firsName;
+        private int iDen;
+        private string lasName;
+        private string phoneNum;
 
+        public Customer()
+        {
+            Email = "";
+            FirstName = "";
+            Id = 0;
+            LastName = "";
+            Phone = "";
+        }
 
         public Customer(string email, string firstName, int id, string lastName, string phone)
         {
-            userMail = email;
-            First = firstName;
-            UserId = id;
-            Last = lastName;
-            PhoneNum = phone;
+            Email = email;
+            FirstName = firstName;
+            Id = id;
+            LastName = lastName;
+            Phone = phone;
         }
 
-        private string userMail
+        public string Email
         {
             get
             {
-                return userMail;
+                return Email;
             }
 
             set
             {
-                email = value;
+                elecMail = value;
             }
         }
 
-        public string First
+        public string FirstName
         {
             get
             {
-                return firstName;
+                return FirstName;
             }
 
             set
             {
-                firstName = value;
+                firsName = value;
             }
         }
 
-        private int UserId
+        public int Id
         {
             get
             {
-                return UserId;
+                return Id;
             }
 
             set
             {
-                id = value;
+                iDen = value;
             }
         }
 
-        private string Last
+        public string LastName
         {
             get
             {
-                return lastName;
+                return LastName;
             }
 
             set
             {
-                lastName = value;
+                lasName = value;
             }
         }
 
-        private string PhoneNum
+        public string Phone
         {
             get
             {
-                return PhoneNum;
+                return Phone;
             }
 
             set
             {
-                phone = value;
+                phoneNum = value;
             }
         }
 
 
         public override string ToString()
         {
-            return String.Format("Email: {0} First name: {1} id: {2} Last name: {3} Phone: {4}", email, firstName, id, lastName, phone);
+            return String.Format("Email: {0} First name: {1} id: {2} Last name: {3} Phone: {4}", elecMail, firsName, iDen, lasName, phoneNum);
         }
 
     }

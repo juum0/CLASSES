@@ -12,9 +12,9 @@ namespace CardTests
     {
         static void Main(string[] args)
         {
-            TestDeckConstructor();
-            TestDeckShuffle();
-            TestDeckDeal();
+            //TestDeckConstructor();
+            //TestDeckShuffle();
+            //TestDeckDeal();
 
             Console.ReadLine();
         }
