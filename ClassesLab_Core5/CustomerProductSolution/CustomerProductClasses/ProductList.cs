@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerProductClasses
 {
+    // Nothing in this class has changed
     public class ProductList
     {
         private List<Product> products;
@@ -90,9 +91,22 @@ namespace CustomerProductClasses
             return pl;
         }
 
+        public static ProductList operator +(Product p, ProductList pl)
+        {
+            pl.Add(p);
+            return pl;
+        }
+
         public static ProductList operator -(ProductList pl, Product p)
         {
             pl.Remove(p);
+            return pl;
+        }
+
+        public static ProductList operator -(ProductList pl, int count)
+        {
+            for (int i = 1; i <= count; i++)
+                pl.products.RemoveAt(0);
             return pl;
         }
     }

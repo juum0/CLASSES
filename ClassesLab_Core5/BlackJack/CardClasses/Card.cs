@@ -24,6 +24,22 @@ namespace CardClasses
             return values[value] + " of " + suits[suit];
         }
 
+        public int Value
+        {
+            get
+            {
+                return Value;
+            }
+
+            set
+            {
+                if (value > 0 && value < 14)
+                    Value = value;
+                else
+                    throw new ArgumentException("value must be between 1 and 13");
+            }
+        }
+
         public int Suit
         {
             get
@@ -33,24 +49,8 @@ namespace CardClasses
 
             set
             {
-                if (value > 0 && value < 14)
-                    suit = value;
-                else
-                    throw new ArgumentException("value must be between 1 and 13");
-            }
-        }
-
-        public int cValue
-        {
-            get
-            {
-                return cValue;
-            }
-
-            set
-            {
                 if (value > 0 && value < 5)
-                    cValue = value;
+                    Suit = value;
                 else
                     throw new ArgumentException("value must be between 1 and 5");
             }
@@ -67,7 +67,7 @@ namespace CardClasses
             s = genSuit;
             v = genValue;  
         }
-        static bool IsAce(int value)
+        public bool IsAce(int value)
         {
             if (value == 1)
                 return true;
@@ -75,7 +75,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsBlack(int suit)
+        public bool IsBlack(int suit)
         {
             if (suit == 1 || suit == 2)
                 return true;
@@ -83,7 +83,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsRed(int suit)
+        public bool IsRed(int suit)
         {
             if (suit == 3 || suit == 4)
                 return true;
@@ -91,7 +91,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsClub(int suit)
+        public bool IsClub(int suit)
         {
             if (suit == 1)
                 return true;
@@ -99,7 +99,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsSpade(int suit)
+        public bool IsSpade(int suit)
         {
             if (suit == 2)
                 return true;
@@ -107,7 +107,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsDiamond(int suit)
+        public bool IsDiamond(int suit)
         {
             if (suit == 3)
                 return true;
@@ -115,7 +115,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsHeart(int suit)
+        public bool IsHeart(int suit)
         {
             if (suit == 4)
                 return true;
@@ -123,7 +123,7 @@ namespace CardClasses
                 return false;
         }
 
-        static bool IsFace(int value)
+        public bool IsFace(int value)
         {
             if (value >= 10)
                 return true;

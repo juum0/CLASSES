@@ -7,11 +7,11 @@ using System.Xml;
 
 namespace CustomerProductClasses
 {
-    public class CustomerList
+    public class CustomerDB
     {
-        
-        private const string Path = @"..\..\..\data\Customers.xml";
-        private  List<Customer> customers = new List<Customer>();
+
+        private const string Path = @"..\..\..\..\data\Customers.xml";
+
         public static List<Customer> GetCustomers()
         {
             // create the list
@@ -81,51 +81,8 @@ namespace CustomerProductClasses
             // close the xmlWriter object
             xmlOut.Close();
         }
-
-        public void ListCustomers()
-        {
-            customers = new List<Customer>();
-        }
-
-        public void Fill()
-        {
-            customers = CustomerList.GetCustomers();
-        }
-
-        public void Save()
-        {
-            CustomerList.SaveCustomers(customers);
-        }
-
-        public void Add(Customer customer)
-        {
-            customers.Add(customer);
-        }
-
-        public void Add(string email, string firstName, int id, string lastName, string phone)
-        {
-            Customer c = new Customer(email, firstName, id, lastName, phone);
-            customers.Add(c);
-        }
-
-        public void Remove(Customer customer)
-        {
-            customers.Remove(customer);
-        }
-
-        public static CustomerList operator +(CustomerList cl, Customer c)
-        {
-            cl.Add(c);
-            return cl;
-        }
-
-        public static CustomerList operator -(CustomerList cl, Customer c)
-        {
-            cl.Remove(c);
-            return cl;
-        }
-
-
-
     }
 }
+
+        
+

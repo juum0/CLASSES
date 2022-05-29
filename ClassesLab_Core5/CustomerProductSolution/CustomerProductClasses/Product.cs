@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Xml.Serialization;
+
 namespace CustomerProductClasses
 {
-   
-
+    // I added this for xml serialization.  Nothing else in this class has changed.
+    [XmlType("Product")] // define Type
+    [XmlInclude(typeof(Clothing)), XmlInclude(typeof(Gear))]
     public class Product
     {
         private int id;
@@ -92,6 +95,7 @@ namespace CustomerProductClasses
             return String.Format("Id: {0} Code: {1} Description: {2} UnitPrice: {3:C} Quantity: {4}", id, code, description, unitPrice, quantity);
         }
 
+        
         public override bool Equals(object obj)
         {
             if (obj == null || obj.GetType() != this.GetType())
@@ -106,17 +110,16 @@ namespace CustomerProductClasses
                     other.QuantityOnHand == QuantityOnHand;
             }
         }
-        
+
         public override int GetHashCode()
         {
             return 13 + 7 * id.GetHashCode() +
-                7 *code.GetHashCode() +
+                7 * code.GetHashCode() +
                 7 * description.GetHashCode() +
-                7 * unitPrice.GetHashCode() + 
+                7 * unitPrice.GetHashCode() +
                 7 * quantity.GetHashCode();
         }
-        
-        
+
         public static bool operator ==(Product p1, Product p2)
         {
             return p1.Equals(p2);
@@ -126,6 +129,29 @@ namespace CustomerProductClasses
         {
             return !p1.Equals(p2);
         }
+
+        /*
+        public string GetState()
+        {
+            XmlSerializer serializer = new XmlSerializer(this.GetType());
+            StringWriter writer = new StringWriter();
+            serializer.Serialize(writer, this);
+            return writer.GetStringBuilder().ToString();
+        }
+
+        public virtual void SetState(string xml)
+        {
+            XmlSerializer serializer = new XmlSerializer(this.GetType());
+            StringReader reader = new StringReader(xml);
+            Product p = (Product)serializer.Deserialize(reader);
+            this.Id = p.Id;
+            this.Code = p.Code;
+            this.Description = p.Description;
+            this.UnitPrice = p.UnitPrice;
+            this.QuantityOnHand = p.QuantityOnHand;
+        }
+        */
+
 
     }
 }
