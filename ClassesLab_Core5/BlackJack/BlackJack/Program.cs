@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using CardClasses;
 
 namespace BlackJack
 {
@@ -6,7 +11,11 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Deck d = new Deck();
+            d.Shuffle();
+            d.Deal();
+            
+            
         }
     }
 }
