@@ -18,6 +18,7 @@ namespace DominoTests
             TestDominoIsDouble();
             TestDominoPropertySettersWithExceptions();
         }
+        
 
         static void TestDominoConstructors()
         {

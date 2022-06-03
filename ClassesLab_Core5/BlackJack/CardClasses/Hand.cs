@@ -9,8 +9,8 @@ namespace CardClasses
     public class Hand
     {
         protected List<Card> cards = new List<Card>();
-        private Deck d;
-        private int numCards;
+        protected Deck d;
+        protected int numCards;
 
         public Hand(Deck d, int numCards)
         {
@@ -98,6 +98,7 @@ namespace CardClasses
             return -1;
         }
 
+      
 
     }
 }

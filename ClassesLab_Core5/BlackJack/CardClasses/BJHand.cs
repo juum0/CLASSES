@@ -28,13 +28,12 @@ namespace CardClasses
                 int score = 0;
                 foreach(Card c in cards)
                 {
-                    if (c.IsAce(c.Value) == true)
+                    if (c.IsAce(c.Value) == true && score > 11)
                         score += 10;
+                    else if (c.IsAce(c.Value) == true && score < 11)
+                         score += 1;
                     else
                         score += c.Value;
-
-                    if (this.HasAce && score > 11)
-                        score += 1;//or 11
                 }
                 return score;
             }
@@ -50,8 +49,12 @@ namespace CardClasses
                     return false;
             }
         }
-
+        public override string ToString()
+        {
+            string output = "";
+            foreach (Card c in cards)
+                output += (c.ToString() + "\n");
+            return output;
+        }
     }
-
-
 }

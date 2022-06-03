@@ -50,6 +50,11 @@ namespace DominoClasses
             return null;
         }
 
+        public void Sort()
+        {
+            listOfDominoes.Sort();
+        }
+
         public bool IsEmpty()
         {
             if (DominosRemaining <= 0)

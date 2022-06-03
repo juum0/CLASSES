@@ -12,10 +12,20 @@ namespace BoneyardTests
     {
         static void Main(string[] args)
         {
-            TestYard();
-            TestBoneyardDraw();
-            TestBoneyardIsEmpty();
-            TestBoneyardShuffle();
+            //TestYard();
+           // TestBoneyardDraw();
+          //  TestBoneyardIsEmpty();
+//TestBoneyardShuffle();
+          //  TestSort();
+        }
+
+        static void TestSort()
+        {
+            Boneyard b = new Boneyard();
+            b.Shuffle();
+            Console.WriteLine(b);
+            b.Sort();
+            Console.WriteLine(b);
         }
 
         static void TestYard()
