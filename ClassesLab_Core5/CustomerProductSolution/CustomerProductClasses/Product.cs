@@ -133,6 +133,7 @@ namespace CustomerProductClasses
         /*
         public string GetState()
         {
+
             XmlSerializer serializer = new XmlSerializer(this.GetType());
             StringWriter writer = new StringWriter();
             serializer.Serialize(writer, this);
