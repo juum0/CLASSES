@@ -11,7 +11,7 @@ namespace CustomerProductClasses
     // I added this for xml serialization.  Nothing else in this class has changed.
     [XmlType("Product")] // define Type
     [XmlInclude(typeof(Clothing)), XmlInclude(typeof(Gear))]
-    public class Product : IComparable<Product>
+    public class Product
     {
         private int id;
         private string code;
@@ -151,6 +151,7 @@ namespace CustomerProductClasses
             this.QuantityOnHand = p.QuantityOnHand;
         }
         */
+        
 
 
     }

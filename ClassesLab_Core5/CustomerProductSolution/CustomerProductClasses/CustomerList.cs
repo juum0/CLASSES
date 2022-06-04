@@ -67,6 +67,7 @@ namespace CustomerProductTests
             customers = CustomerDB.GetCustomers();
         }
         
+
         public static CustomerList operator +(CustomerList cl, Customer c)
         {
             cl.Add(c);

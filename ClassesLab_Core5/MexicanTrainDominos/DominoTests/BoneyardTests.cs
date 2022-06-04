@@ -13,10 +13,10 @@ namespace BoneyardTests
         static void Main(string[] args)
         {
             //TestYard();
-           // TestBoneyardDraw();
-          //  TestBoneyardIsEmpty();
-//TestBoneyardShuffle();
-          //  TestSort();
+            // TestBoneyardDraw();
+            //  TestBoneyardIsEmpty();
+            //TestBoneyardShuffle();
+            TestSort();
         }
 
         static void TestSort()
@@ -26,6 +26,18 @@ namespace BoneyardTests
             Console.WriteLine(b);
             b.Sort();
             Console.WriteLine(b);
+        }
+
+        static void TestForEach()
+        {
+            Train mt = new MexicanTrain();
+            mt.add(new Domino(1, 2));
+            mt.add(new Domino(1, 5));
+            mt.add(new Domino(1, 2));
+            mt.add(new Domino(1, 5));
+            foreach (Domino d in mt)
+                Console.WriteLine(d);
+
         }
 
         static void TestYard()
