@@ -27,7 +27,7 @@ namespace DominoClasses
 
         public Hand hand
         {
-            
+            rtebhawq4thbabaq4tbawqba4rebawrba5236y41
         }
 
         public PlayerTrain(Hand h)
