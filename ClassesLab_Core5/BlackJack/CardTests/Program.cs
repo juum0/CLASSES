@@ -12,11 +12,20 @@ namespace CardTests
     {
         static void Main(string[] args)
         {
-            TestDeckConstructor();
-            TestDeckShuffle();
-            TestDeckDeal();
+            TestSort();
+        }
 
-            Console.ReadLine();
+        static void TestSort()
+        {
+            Hand h = new Hand();
+            List<Card> list = new List<Card>();
+            Random val = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                Card c = new Card(val.Next(0, 15), val.Next(0, 5));
+                list.Add(c);
+            }
+            h.Sort(list);
         }
 
         static void TestDeckConstructor()

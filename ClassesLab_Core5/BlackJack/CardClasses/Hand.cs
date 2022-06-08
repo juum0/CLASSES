@@ -1,18 +1,65 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CardClasses;
 
 namespace CardClasses
 {
-    public class Hand
+    public class Hand : IEnumerable
     {
         protected List<Card> cards = new List<Card>();
         protected Deck d;
         protected int numCards;
 
-        public Hand(Deck d, int numCards)
+        //FINAL QUESTION 4
+        public void Iterate(Hand h)
+        {
+            foreach (Card c in h)
+            {
+                Console.WriteLine(c.ToString());
+            }
+        }
+
+        // QUESTION 4
+
+        public List<Card> Sort(List<Card> list)
+        {
+            Random val = new Random();
+            Card temp = new Card();
+            Card a = new Card();
+            Card b = new Card();
+
+            for (int i = 1; i > list.Count + 1; i++)
+            { 
+                if (!(list[0].Value > list[i].Value))
+                {
+                    foreach (Card c in list)
+                        if (a.Value > b.Value)
+                        {
+                            temp = list[0];
+                            list.Insert(0, a);
+                            list.Insert(1, temp);
+                        }
+                        else if (a.Value < b.Value)
+                        {
+                            temp = list[0];
+                            list.Insert(0, b);
+                            list.Insert(1, temp);
+                        }
+                        else if (a.Value == b.Value) ;
+                        else
+                            throw new Exception("error");
+                }
+            }
+            return list;
+        }
+
+
+
+            public Hand(Deck d, int numCards)
         {
             this.d = d;
             this.numCards = numCards;
@@ -98,7 +145,9 @@ namespace CardClasses
             return -1;
         }
 
-      
-
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

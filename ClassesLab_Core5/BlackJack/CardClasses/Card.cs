@@ -1,16 +1,71 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CardClasses
 {
-    public class Card
+    public class Card : IComparable
     {
         private static string[] values = { "", "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "Ten", "Jack", "Queen", "King" };
         private static string[] suits = { "", "Clubs", "Diamonds", "Hearts", "Spades" };
         private static Random generator = new Random();
         private static int genSuit = generator.Next(1,5);
         private static int genValue = generator.Next(1, 14);
-        private int value;
+        protected int vaLue;
         private int suit;
+
+        // FINAL QUESTION 3 I can't get this to run ANYWHERE(I have tried multiple times, places, etc) but it should work.
+        public void Sort(List<Card> list)
+        {
+            Random val = new Random();
+            Card temp = new Card();
+            Card a = new Card();
+            Card b = new Card();
+
+            for (int i = 1; i > list.Count + 1; i++)
+            {
+                if (!(list[0].Value > list[i].Value))
+                {
+                    foreach (Card c in list)
+                        if (a.Value > b.Value)
+                        {
+                            temp = list[0];
+                            list.Insert(0, a);
+                            list.Insert(1, temp);
+                        }
+                        else if (a.Value < b.Value)
+                        {
+                            temp = list[0];
+                            list.Insert(0, b);
+                            list.Insert(1, temp);
+                        }
+                        else if (a.Value == b.Value) ;
+                        else
+                            throw new Exception("error");
+                }
+            }
+        }
+
+        static void TestSort()
+        {
+            Hand h = new Hand();
+            List<Card> list = new List<Card>();
+            Random val = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                Card c = new Card(val.Next(0, 15), val.Next(0, 5));
+                list.Add(c);
+            }
+            h.Sort(list);
+        }
+
+
+        //
+
+
+
+
+
+
         public bool HasMatchingSuit(Card other)
         {
             if (this.suit == other.suit)
@@ -21,20 +76,20 @@ namespace CardClasses
 
         public override string ToString()
         {
-            return values[value] + " of " + suits[suit];
+            return values[vaLue] + " of " + suits[suit];
         }
 
         public int Value
         {
             get
             {
-                return Value;
+                return vaLue;
             }
 
             set
             {
                 if (value > 0 && value < 14)
-                    Value = value;
+                    vaLue = value;
                 else
                     throw new ArgumentException("value must be between 1 and 13");
             }
@@ -59,7 +114,7 @@ namespace CardClasses
         public Card()
         {
             suit = 1;
-            value = 1;
+            vaLue = 1;
         }
 
         public Card(int v, int s)
@@ -129,6 +184,11 @@ namespace CardClasses
                 return true;
             else
                 return false;
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,12 +9,10 @@ namespace CardTests
 {
     class BJHandTests
     {
-        static void Main(string[] args)
-        {
-            TestHasAce();
-            TestScore();
-            TestIsBusted();
-        }
+       // static void Main(string[] args)
+      //  {
+       //     TestHasAce();
+       // }
 
         static void TestHasAce()
         {

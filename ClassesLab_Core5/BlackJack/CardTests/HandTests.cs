@@ -7,11 +7,12 @@ using CardClasses;
 
 namespace CardTests
 {
-    class HandTests
+    class HandTests : Hand
     {
 
         static void Main(string[] args)
         {
+            /*
             TestAddCard();
             TestDiscard();
             TestHasCard();
@@ -20,8 +21,17 @@ namespace CardTests
             TestIndexOfCard();
             TestIndexOfCardValue();
             TestIndexOfCardValueAndSuit();
+            */
+            TestIterate();
 
         }
+        // FINAL QUESTION 4
+        static void TestIterate()
+        {
+            Hand h = new Hand();
+            h.Iterate(h);
+        }
+        //FINAL QUESTION 4
 
         static void TestAddCard()
         {
